@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="form-signin">
+  <form #f="ngForm" class="p-5" (ngSubmit)="loginAction()">
+
+    <h1 class="h3 mb-4 fw-bold">Iniciar Sesion</h1>
+
+  
+      <input type="email" name="email" class="form-control" placeholder="Email"
+        [(ngModel)]="loginPerson.email" email maxlength="100" required>
+      <label>Email</label>
+    
+  
+      <input type="password" name="password" class="form-control" placeholder="Contraseña"
+        [(ngModel)]="loginPerson.password" required>
+      <label>Password</label>
+    
+    <button class="w-100 btn btn-lg" type="submit" [disabled]="f.invalid">INICIAR SESION</button>
+    <app-alert [alert]="alert"></app-alert>
+    <div class="forget_password">
+      <p>¿Olvidaste tu contraseña?<span><a routerLink="/olvide_mi_contraseña">Reestablecer contraseña</a></span></p>
+    </div>
+
+    <div class="signup_container">
+      <p>¿No estás registrado?<span><a routerLink="/signup">Registrate</a></span></p>
+    </div>
+
+  </form>
+
+
+</div>

@@ -1,0 +1,18 @@
+<div class="main_container">
+  <app-header></app-header>
+
+  <div class="category_container">
+    <div *ngFor="let item of categories">
+
+      <div class="category_card_container" (click)="selectCategory(item.id)">
+        <div class="category_image">
+          <img src="{{item.url_image}}" alt="img_{{item.name}}">
+        </div>
+        <h3>{{item.name}}</h3>
+      </div>
+
+    </div>
+  </div>
+
+  <app-nav-user></app-nav-user>
+</div>

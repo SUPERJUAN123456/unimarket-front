@@ -1,0 +1,80 @@
+
+.main_container{
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+}
+
+.account_container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3em;
+  overflow-y:scroll ;
+  color: #ffff;
+}
+.account_container_admin{
+  min-height: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3em;
+  overflow-y:scroll ;
+  color: #ffff;
+}
+
+.profile_container{
+  width: 100%;
+  background-color: #2c3034;
+  display: flex;
+  padding: 1em 1em 2em 1em;
+}
+
+.profile_item{
+  display: flex;
+  align-items: center;
+  gap: 3em;
+}
+
+.profile_item a{
+  display: flex;
+  font-size: 3em;
+  padding: 1em;
+  background-color: #242424;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+}
+
+.transaction_container, .payment_method_container, .favorite_products_container{
+  width: 100%;
+  background-color: #2c3034;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  padding: 1em 1em 2em 1em;
+}
+.transaction_item_container{
+  display: flex;
+  justify-content: center;
+  gap: 4em;
+}
+.transaction_item, .payment_method_item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.transaction_item h3 ,.payment_method_item h3{
+  font-size: 2.5em;
+}
+.transaction_item i, .payment_method_item i {
+  font-size: 5em;
+}
+
+.favorite_product_list{
+  border: 1px solid black;
+  width: 100%;
+  padding: 1em;
+}

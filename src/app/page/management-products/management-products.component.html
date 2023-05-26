@@ -1,0 +1,76 @@
+<div *ngIf="!isLogged; then nologged else logged"></div>
+<ng-template #nologged>
+  <app-account-no-logged></app-account-no-logged>
+</ng-template>
+<ng-template #logged>
+  <div class="main_container">
+    <app-header></app-header>
+    <div class="card p-4">
+      <h1>Gestion de productos</h1>
+      <div class="mb-3">
+        <button type="button" class="btn btn-danger" [disabled]="selectedList.length == 0" data-bs-toggle="modal"
+          data-bs-target="#borrar"><i class="fa-solid fa-trash me-1"></i> Eliminar
+          {{textBtnDelete}}</button>
+      </div>
+      <table class="table ">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Unidades</th>
+            <th>Imágenes</th>
+            <th>Categoría</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor="let item of products">
+            <td><input #check class="form-check-input" type="checkbox" (change)="select(item,check.checked)" /></td>
+            <td>
+              <p>{{item.title}}</p>
+            </td>
+            <td>
+              <p>{{item.description}}</p>
+            </td>
+            <td>
+              <p>{{item.price}}</p>
+            </td>
+            <td>
+              <p>{{item.unities}}</p>
+            </td>
+          
+            <td> <img src="{{item.images[0].url}}" alt="img_{{item.title}}"
+                width="120"></td>
+            <td>
+              <p>{{item.idCategory}}</p>
+            </td>
+            <td>
+              <button type="button" class="btn btn-warning rounded-circle me-2" (click)="updateProduct(item.id)">
+                <i class="fa-solid fa-pen" style="color: white;"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="modal fade" id="borrar" tabindex="-1" aria-labelledby="borrarModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="borrarModalLabel">Eliminar producto</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>¿Está seguro que desea borrar los elementos seleccionados?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteProduct()">Sí</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-nav-user></app-nav-user>
+  </div>
+</ng-template>

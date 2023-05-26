@@ -1,0 +1,14 @@
+<div class="card_item" (click)="detailProduct(product.id)">
+  <div class="image_item">
+    <img src="{{product.images[0].url}}" alt="img_{{product.title}}">
+  </div>
+  <div class="card_body">
+
+    <p>{{product.title}}</p>
+    <p>Puntuacion: {{product.puntuation}}</p>
+    <p>$ {{product.price}}</p>
+    <span class="badge">{{categoryName}}</span>
+
+  </div>
+
+</div>

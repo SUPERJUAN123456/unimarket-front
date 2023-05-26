@@ -1,0 +1,22 @@
+<div class="main_container">
+    <app-header></app-header>
+    <div class="payment_method_container">
+        <div *ngFor="let item of paymentMethods">
+            <div class="payment_method_card">
+                <div class="info">
+                    <h3>{{item.bankingEntity}}</h3>
+                    <h3>{{item.cardNumber}}</h3>
+                </div>
+                <div class="card_buttons">
+                    <i class="fa-solid fa-pen-to-square" (click)="editPaymentMethod(item.id)"></i>
+                    <i class="fa-solid fa-trash" (click)="deletePaymentMethod(item.id)"></i>
+                </div>
+
+            </div>
+        </div>
+        <div (click)="addPaymentMethod()" class="new_payment_method">
+            Añadir nuevo metodo de pago
+        </div>
+    </div>
+    <app-nav-user></app-nav-user>
+</div>

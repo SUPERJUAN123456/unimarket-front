@@ -1,0 +1,18 @@
+.main_container{
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+  }
+
+  .account_container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4em;
+    overflow-y:scroll ;
+    color: #ffff;
+    padding: 2em;
+    min-height: 80%;
+  }

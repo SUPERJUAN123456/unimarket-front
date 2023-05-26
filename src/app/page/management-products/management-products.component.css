@@ -1,0 +1,33 @@
+.main_container {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal {
+    color: #000;
+}
+
+.card {
+    background-color: #2e2e2e;
+    color: #ffffff;    
+    min-height: 80%;
+    overflow-y: scroll;
+
+}
+
+thead,
+tbody {
+    color: #ffffff;
+}
+
+th {
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #a89335;
+
+}
