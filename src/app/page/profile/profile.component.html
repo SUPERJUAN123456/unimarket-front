@@ -1,45 +1,33 @@
 <div *ngIf="!isLogged; then nologged else logged"></div>
 <ng-template #nologged>
-  <app-account-no-logged></app-account-no-logged>
+    <app-account-no-logged></app-account-no-logged>
 </ng-template>
 <ng-template #logged>
-  <div class="main_container">
-
-      <h1>Informacion de la persona</h1>
-
-      <form class="form_info_person" #f="ngForm" (ngSubmit)="updatePerson()">
-
-        <div class="text-field">
-          <label>Nombre: </label>
-          <input #name="ngModel" [ngClass]="name.invalid && (name.dirty || name.touched) ? 'is-invalid' : ''"
-            type="text" name="name" [(ngModel)]="person.name" maxlength="100" required>
-        </div>
-
-        <div class="text-field">
-          <label>Pais: </label>
-          <input #country="ngModel"
-            [ngClass]="country.invalid && (country.dirty || country.touched) ? 'is-invalid' : ''" type="text"
-            name="country" [(ngModel)]="person.country" maxlength="100" required>
-        </div>
-        <div class="text-field">
-          <label>Ciudad: </label>
-          <input #city="ngModel" [ngClass]="city.invalid && (city.dirty || city.touched) ? 'is-invalid' : ''"
-            type="text" name="city" [(ngModel)]="person.city" maxlength="100" required>
-        </div>
-        <div class="text-field">
-          <label>Dirección: </label>
-          <input #adress="ngModel" [ngClass]="adress.invalid && (adress.dirty || adress.touched) ? 'is-invalid' : ''"
-            type="text" name="adress" required [(ngModel)]="person.adress" maxlength="100">
-        </div>
-        <div class="text-field">
-          <label>Teléfono: </label>
-          <input #cellphoneNumber="ngModel"
-            [ngClass]="cellphoneNumber.invalid && (cellphoneNumber.dirty || cellphoneNumber.touched) ? 'is-invalid' : ''"
-            type="number" name="cellphoneNumber" [(ngModel)]="person.cellphoneNumber" maxlength="15" required>
-        </div>
-
-        <button type="submit" value="update" name="btnUpdate" [disabled]="f.invalid">Guardar cambios</button>
-        <app-alert [alert]="alert"></app-alert>
-      </form>
+    <div class="main_container">
+        <h1>Informacion Usuario</h1>
+        <form class="form_info_person" #f="ngForm" (ngSubmit)="updatePerson()">
+            <div class="text-field">
+                <label>Nombre: </label>
+                <input #name="ngModel" [ngClass]="name.invalid && (name.dirty || name.touched) ? 'is-invalid' : ''" type="text" name="name" [(ngModel)]="person.name" maxlength="100" required>
+            </div>
+            <div class="text-field">
+                <label>Pais: </label>
+                <input #country="ngModel" [ngClass]="country.invalid && (country.dirty || country.touched) ? 'is-invalid' : ''" type="text" name="country" [(ngModel)]="person.country" maxlength="100" required>
+            </div>
+            <div class="text-field">
+                <label>Ciudad: </label>
+                <input #city="ngModel" [ngClass]="city.invalid && (city.dirty || city.touched) ? 'is-invalid' : ''" type="text" name="city" [(ngModel)]="person.city" maxlength="100" required>
+            </div>
+            <div class="text-field">
+                <label>Dirección: </label>
+                <input #adress="ngModel" [ngClass]="adress.invalid && (adress.dirty || adress.touched) ? 'is-invalid' : ''" type="text" name="adress" required [(ngModel)]="person.adress" maxlength="100">
+            </div>
+            <div class="text-field">
+                <label>Teléfono: </label>
+                <input #cellphoneNumber="ngModel" [ngClass]="cellphoneNumber.invalid && (cellphoneNumber.dirty || cellphoneNumber.touched) ? 'is-invalid' : ''" type="number" name="cellphoneNumber" [(ngModel)]="person.cellphoneNumber" maxlength="15" required>
+            </div>
+            <button type="submit" value="update" name="btnUpdate" [disabled]="f.invalid">Guardar cambios</button>
+            <app-alert [alert]="alert"></app-alert>
+        </form>
     </div>
 </ng-template>

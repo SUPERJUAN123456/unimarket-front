@@ -1,54 +1,48 @@
 <app-header></app-header>
 <div class="form_sign_container">
-
-  <h1>Registrarse</h1>
-
-  <form class="form_signup" #f="ngForm" (ngSubmit)="register()">
-  
-    <div class="text-field">
-      <label >Documento de identidad: </label>
-      <input #id="ngModel" [ngClass]="id.invalid && (id.dirty || id.touched) ? 'is-invalid' : ''" type="number" name="id" [(ngModel)]="person.id" maxlength="100" required>
+    <h1>Registrarse</h1>
+    <form class="form_signup" #f="ngForm" (ngSubmit)="register()">
+        <div class="text-field">
+            <label>Numero de Identificacion:</label>
+            <input #id="ngModel" [ngClass]="id.invalid && (id.dirty || id.touched) ? 'is-invalid' : ''" type="number" name="id" [(ngModel)]="person.id" maxlength="100" required>
+        </div>
+        <div class="text-field">
+            <label>Nombre: </label>
+            <input #name="ngModel" [ngClass]="name.invalid && (name.dirty || name.touched) ? 'is-invalid' : ''" ype="text" name="name" [(ngModel)]="person.name" maxlength="100" required>
+        </div>
+        <div class="text-field">
+            <label>Email: </label>
+            <input #email="ngModel" [ngClass]="email.invalid && (email.dirty || email.touched) ? 'is-invalid' : ''" type="email" name="email" [(ngModel)]="person.email" email maxlength="100" required>
+        </div>
+        <div class="text-field">
+            <label>Pais: </label>
+            <input #country="ngModel" [ngClass]="country.invalid && (country.dirty || country.touched) ? 'is-invalid' : ''" type="text" name="country" [(ngModel)]="person.country" maxlength="100" required>
+        </div>
+        <div class="text-field">
+            <label>Ciudad: </label>
+            <input #city="ngModel" [ngClass]="city.invalid && (city.dirty || city.touched) ? 'is-invalid' : ''" type="text" name="city" [(ngModel)]="person.city" maxlength="100" required>
+        </div>
+        <div class="text-field">
+            <label>Dirección: </label>
+            <input #adress="ngModel" [ngClass]="adress.invalid && (adress.dirty || adress.touched) ? 'is-invalid' : ''" type="text" name="adress" required [(ngModel)]="person.adress" maxlength="100">
+        </div>
+        <div class="text-field">
+            <label>Teléfono: </label>
+            <input #cellphoneNumber="ngModel" [ngClass]="cellphoneNumber.invalid && (cellphoneNumber.dirty || cellphoneNumber.touched) ? 'is-invalid' : ''" type="number" name="cellphoneNumber" [(ngModel)]="person.cellphoneNumber" maxlength="15" required>
+        </div>
+        <div class="text-field">
+            <label>Contraseña: </label>
+            <input #password="ngModel" [ngClass]="password.invalid && (password.dirty || password.touched) ? 'is-invalid' : ''" type="password" name="password" [(ngModel)]="person.password" required>
+        </div>
+        <div class="text-field">
+            <label>Confirmar contraseña: </label>
+            <input #confirmedPassword="ngModel" [ngClass]="confirmedPassword.invalid && (confirmedPassword.dirty || confirmedPassword.touched) ? 'is-invalid' : ''" type="password" name="confirmedPassword" [(ngModel)]="person.confirmedPassword" required>
+        </div>
+        <p *ngIf="!passwordEquals()">Las contraseñas no coinciden</p>
+        <button type="submit" value="register" name="btnRegister" [disabled]="!passwordEquals() || f.invalid">Registrarse</button>
+        <app-alert [alert]="alert"></app-alert>
+    </form>
+    <div class="login_link">
+        <p>¿Ya tienes cuenta? <span><a routerLink="/login">Iniciar Sesión</a></span></p>
     </div>
-    <div class="text-field">
-      <label >Nombre: </label>
-      <input #name="ngModel" [ngClass]="name.invalid && (name.dirty || name.touched) ? 'is-invalid' : ''"type="text" name="name" [(ngModel)]="person.name" maxlength="100" required>
-    </div>
-    <div class="text-field">
-      <label >Email: </label>
-      <input #email="ngModel" [ngClass]="email.invalid && (email.dirty || email.touched) ? 'is-invalid' : ''" type="email" name="email" [(ngModel)]="person.email" email maxlength="100" required>
-    </div>
-    <div class="text-field">
-      <label >Pais: </label>
-      <input #country="ngModel" [ngClass]="country.invalid && (country.dirty || country.touched) ? 'is-invalid' : ''" type="text" name="country" [(ngModel)]="person.country" maxlength="100" required>
-    </div>
-    <div class="text-field">
-      <label >Ciudad: </label>
-      <input #city="ngModel" [ngClass]="city.invalid && (city.dirty || city.touched) ? 'is-invalid' : ''" type="text" name="city" [(ngModel)]="person.city" maxlength="100" required>
-    </div>
-    <div class="text-field">
-      <label >Dirección: </label>
-      <input #adress="ngModel" [ngClass]="adress.invalid && (adress.dirty || adress.touched) ? 'is-invalid' : ''" type="text" name="adress" required [(ngModel)]="person.adress" maxlength="100" >
-    </div>
-    <div class="text-field">
-      <label >Teléfono: </label>
-      <input #cellphoneNumber="ngModel" [ngClass]="cellphoneNumber.invalid && (cellphoneNumber.dirty || cellphoneNumber.touched) ? 'is-invalid' : ''" type="number" name="cellphoneNumber" [(ngModel)]="person.cellphoneNumber" maxlength="15" required>
-    </div>
-    <div class="text-field">
-      <label >Contraseña: </label>
-      <input #password="ngModel" [ngClass]="password.invalid && (password.dirty || password.touched) ? 'is-invalid' : ''" type="password" name="password" [(ngModel)]="person.password" required>
-    </div>
-    <div class="text-field">
-      <label >Confirmar contraseña: </label>
-      <input #confirmedPassword="ngModel" [ngClass]="confirmedPassword.invalid && (confirmedPassword.dirty || confirmedPassword.touched) ? 'is-invalid' : ''" type="password" name="confirmedPassword" [(ngModel)]="person.confirmedPassword" required>
-    </div>
-    <p *ngIf="!passwordEquals()" >Las contraseñas no coinciden</p>
-    <button type="submit" value="register" name="btnRegister" [disabled]="!passwordEquals() || f.invalid">Registrarse</button>
-    <app-alert [alert] = "alert"></app-alert>
-  </form>
-  
-  <div class="login_link">
-    <p>¿Ya tienes cuenta? <span><a routerLink="/login">Iniciar Sesión</a></span></p>
-  </div>
-  
-  
 </div>

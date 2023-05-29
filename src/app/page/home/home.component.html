@@ -1,33 +1,25 @@
 <div *ngIf="!isMod; then user else mod"></div>
-
 <ng-template #mod>
-  <app-home-admin></app-home-admin>
-  
+    <app-home-admin></app-home-admin>
 </ng-template>
-
 <ng-template #user>
-  <div class="home_container">
-
-    <div class="header_container">
-      <app-header></app-header>
+    <div class="home_container">
+        <div class="header_container">
+            <app-header></app-header>
+        </div>
+        <div class="form_search">
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search"  (submit)="iraBusqueda(textoBusqueda.value)" >
+                <input #textoBusqueda type="search " style="color: white" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+            </form>
+        </div>
+        <div class="products_container">
+            <div class="item_product" *ngFor="let product of filtro">
+                <app-product-card [product]="product"></app-product-card>
+            </div>
+        </div>
+        <app-alert [alert]="alert"></app-alert>
+        <div class="nav_container">
+            <app-nav-user></app-nav-user>
+        </div>
     </div>
-  
-    <div class="form_search">
-      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" (submit)="iraBusqueda(textoBusqueda.value)">
-        <input #textoBusqueda type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
-          aria-label="Search">
-      </form>
-    </div>  
-  
-    <div class="products_container" >
-      <div class = "item_product" *ngFor="let product of filtro">
-        <app-product-card [product]="product"></app-product-card>
-      </div>
-    </div>
-    <app-alert [alert] = "alert"></app-alert>
-    <div class="nav_container">
-      <app-nav-user></app-nav-user>
-    </div>
-    
-  </div>
 </ng-template>

@@ -2,12 +2,11 @@
     text-align: center;
     padding: 1em;
     min-width: 100%;
-    background-color: #292929;
-  
+    background-color: #371950;
+
   }
   .header_container h1{
-    color: #ffdc52;
+    color: #dcc0f0;
     font-size: 3em;
     font-weight: bold;
   }
-  

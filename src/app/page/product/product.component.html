@@ -1,54 +1,51 @@
 <div *ngIf="!isLogged; then nologged else logged"></div>
 <ng-template #nologged>
-  <app-account-no-logged></app-account-no-logged>
+    <app-account-no-logged></app-account-no-logged>
 </ng-template>
 <ng-template #logged>
-  <div class="main_container">
-    <app-header></app-header>
-    <div class="product_form_container">
-      <h1>Información del producto</h1>
-      <form class="form_product" #f="ngForm">
-        <div class="textfield">
-          <label>Titulo: </label>
-          <input type="text" name="title" [(ngModel)]="product.title" required />
+    <div class="main_container">
+        <app-header></app-header>
+        <div class="product_form_container">
+            <h1>Información del producto</h1>
+            <form class="form_product" #f="ngForm">
+                <div class="textfield">
+                    <label>Titulo: </label>
+                    <input type="text" name="title" [(ngModel)]="product.title" required/>
+                </div>
+                <div class="textfield">
+                    <label>Descripcion: </label>
+                    <textarea name="description" [(ngModel)]="product.description" required></textarea>
+                </div>
+                <div class="textfield">
+                    <label>Precio: </label>
+                    <input type="number" name="price" [(ngModel)]="product.realPrice" required/>
+                </div>
+                <div class="textfield">
+                    <label>Unidades: </label>
+                    <input type="number" name="units" [(ngModel)]="product.unities" required/>
+                </div>
+                <div class="textfield">
+                    <label>Descuento: </label>
+                    <input type="number" name="discount" [(ngModel)]="product.discount"/>
+                </div>
+                <div class="textfield image_select">
+                    <label>Imagen: </label>
+                    <input type="file" name="images" (change)="onFileChange($event)" multiple/>
+                </div>
+                <div class="button_upload">
+                    <button type="submit" [disabled]="images == null" class="btn btn-primary" (click)="subirImagenes()"><i class="fa-solid fa-cloud-arrow-up me-2"></i>Subir imágenes
+                    </button>
+                </div>
+                <div class="textfield cbCategory">
+                    <label>Categoría: </label>
+                    <select name="category" [(ngModel)]="product.idCategory" required>
+                        <option value="" selected>Seleccione una categoría</option>
+                        <option [value]="item.id" *ngFor="let item of categories; index as i"> {{item.name}} </option>
+                    </select>
+                </div>
+                <button class="button_form" (click)="createProduct()" type="submit" [disabled]="f.invalid">Crear producto</button>
+            </form>
         </div>
-        <div class="textfield">
-          <label>Descripcion: </label>
-          <textarea name="description" [(ngModel)]="product.description" required></textarea>
-        </div>
-        <div class="textfield">
-          <label>Precio: </label>
-          <input type="number" name="price" [(ngModel)]="product.realPrice" required />
-        </div>
-        <div class="textfield">
-          <label>Unidades: </label>
-          <input type="number" name="units" [(ngModel)]="product.unities" required />
-        </div>
-        <div class="textfield">
-          <label>Descuento: </label>
-          <input type="number" name="discount" [(ngModel)]="product.discount" />
-        </div>
-        <div class="textfield image_select">
-          <label>Imagen: </label>
-          <input type="file" name="images" (change)="onFileChange($event)" multiple />
-        </div>
-        <div class="button_upload">
-          <button type="submit" [disabled]="images == null" class="btn btn-primary" (click)="subirImagenes()">
-            <i class="fa-solid fa-cloud-arrow-up me-2"></i>Subir imágenes
-          </button>
-        </div>
-
-        <div class="textfield cbCategory">
-          <label>Categoría: </label>
-          <select name="category" [(ngModel)]="product.idCategory" required>
-            <option value="" selected>Seleccione una categoría</option>
-            <option [value]="item.id" *ngFor="let item of categories; index as i"> {{item.name}} </option>
-          </select>
-        </div>
-        <button class="button_form" (click)="createProduct()" type="submit"
-          [disabled]="f.invalid">Crear producto</button>
-      </form>
+        <app-nav-user></app-nav-user>
     </div>
-    <app-nav-user></app-nav-user>
-  </div>
 </ng-template>

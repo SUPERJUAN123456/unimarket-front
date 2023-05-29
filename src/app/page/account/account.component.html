@@ -1,85 +1,71 @@
 <div *ngIf="!isLogged; then nologged else logged"></div>
 <ng-template #nologged>
-  <app-account-no-logged></app-account-no-logged>
+    <app-account-no-logged></app-account-no-logged>
 </ng-template>
-
 <ng-template #logged>
-  <div *ngIf="!isMod; then user else mod"></div>
-  <ng-template #mod>
-    <div class="main_container">
-      <app-header></app-header>
-      <div class="account_container_admin">
-
-        <div class="profile_container">
-          <div class="profile_item_container">
-            <div class="profile_item">
-              <a routerLink="/profile"><i class="fa-solid fa-user" style="color: #ffffff;"></i></a>
-              <h3>{{name}}</h3>
+    <div *ngIf="!isMod; then user else mod"></div>
+    <ng-template #mod>
+        <div class="main_container">
+            <app-header></app-header>
+            <div class="account_container_admin">
+                <div class="profile_container">
+                    <div class="profile_item_container">
+                        <div class="profile_item">
+                            <a routerLink="/profile"><i class="fa-solid fa-user" style="color: #ffffff;"></i></a>
+                            <h3>{{name}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <p><button type="button" (click)="logout()" class="btn btn-warning">Logout</button></p>
             </div>
-          </div>
+            <app-nav-admin></app-nav-admin>
         </div>
-
-
-        <button type="button" (click)="logout()" class="btn btn-warning">Logout</button>
-      </div>
-
-      <app-nav-admin></app-nav-admin>
-    </div>
-
-  </ng-template>
-  <ng-template #user>
-    <div class="main_container">
-      <app-header></app-header>
-      <div class="account_container">
-
-        <div class="profile_container">
-          <div class="profile_item_container">
-            <div class="profile_item">
-              <a routerLink="/perfil"><i class="fa-solid fa-user" style="color: #ffffff;"></i></a>
-              <h3>{{name}}</h3>
+    </ng-template>
+    <ng-template #user>
+        <div class="main_container">
+            <app-header></app-header>
+            <div class="account_container">
+                <div class="profile_container">
+                    <div class="profile_item_container">
+                        <div class="profile_item">
+                            <a routerLink="/perfil"><i class="fa-solid fa-user" style="color: #ffffff;"></i></a>
+                            <h3>{{name}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="transaction_container">
+                    <h2>Transacciones y productos</h2>
+                    <div class="transaction_item_container">
+                        <div class="transaction_item">
+                            <a routerLink="/compras"><i class="fa-solid fa-bag-shopping" style="color: #ffffff;"></i></a>
+                            <h3>Compras</h3>
+                        </div>
+                        <div class="transaction_item">
+                            <a routerLink="/gestion_productos"><i class="fa-solid fa-box" style="color: #ffffff;"></i></a>
+                            <h3>Mis productos</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment_method_container">
+                    <h2>Mis metodos de pago</h2>
+                    <div class="payment_method_item">
+                        <a routerLink="/metodos_de_pago/{{idPerson}}"><i class="fa-regular fa-credit-card" style="color: #ffffff;"></i></a>
+                        <h3>Tarjetas o Metodos de pago&nbsp;</h3>
+                        <h3></h3>
+                    </div>
+                </div>
+                <div class="favorite_products_container">
+                    <h2>Mis productos favoritos</h2>
+                    <div class="favorite_product_list">
+                        <p>product1</p>
+                        <p>product1</p>
+                        <p>product1</p>
+                        <p>product1</p>
+                    </div>
+                </div>
+                <button type="button" (click)="logout()" class="btn btn-warning">Logout</button>
             </div>
-          </div>
+            <app-nav-user></app-nav-user>
         </div>
-
-        <div class="transaction_container">
-          <h2>Mis transacciones y productos</h2>
-          <div class="transaction_item_container">
-            <div class="transaction_item">
-              <a routerLink="/compras"><i class="fa-solid fa-bag-shopping" style="color: #ffffff;"></i></a>
-              <h3>Compras</h3>
-            </div>
-            <div class="transaction_item">
-              <a routerLink="/gestion_productos"><i class="fa-solid fa-box" style="color: #ffffff;"></i></a>
-              <h3>Mis productos</h3>
-            </div>
-          </div>
-        </div>
-
-        <div class="payment_method_container">
-          <h2>Mis metodos de pago</h2>
-          <div class="payment_method_item">
-            <a routerLink="/metodos_de_pago/{{idPerson}}"><i class="fa-regular fa-credit-card" style="color: #ffffff;"></i></a>
-            <h3>Tarjetas</h3>
-          </div>
-        </div>
-
-        <div class="favorite_products_container">
-          <h2>Mis productos favoritos</h2>
-          <div class="favorite_product_list">
-            <p>product1</p>
-            <p>product1</p>
-            <p>product1</p>
-            <p>product1</p>
-          </div>
-        </div>
-        <button type="button" (click)="logout()" class="btn btn-warning">Logout</button>
-      </div>
-
-      <app-nav-user></app-nav-user>
-    </div>
-  </ng-template>
-
-
-
-
+    </ng-template>
 </ng-template>

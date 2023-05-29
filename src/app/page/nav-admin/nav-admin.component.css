@@ -4,10 +4,10 @@
     width: 100%;
     justify-content: space-between;
     padding: 1em;
-    background-color: #2d2d2d;
+    background-color: #22003b;
     margin: 0;
   }
-  
+
   .nav_link{
     text-decoration: none;
     display: flex;
@@ -17,23 +17,23 @@
     padding: 0.4em;
     color: #fff;
   }
-  
+
   i{
     font-size: 1.2em;
   }
   .fa-circle-plus{
     font-size: 3em;
-    color: #ffdc52 ;
+    color: #db96e3 ;
   }
   .nav_link:hover {
-    color: #ffdc52;
-  }  
-  
+    color: #dcc0f0;
+  }
+
   @media only screen and (min-width: 1200px){
     .nav_link{
       font-size: 1.5em;
     }
-  
+
     i{
       font-size: 1.5em;
     }

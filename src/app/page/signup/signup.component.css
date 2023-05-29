@@ -47,8 +47,8 @@
 }
 
 .text-field input:focus {
-    border: 1px solid #ffc107;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(255, 193, 7);
+    border: 1px solid #dcc0f0;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.06), 0 0 8px rgb(206, 122, 210);
 }
 
 .cbCategory select {
@@ -61,29 +61,29 @@
 
 
 .cbCategory select:focus {
-    border: 1px solid #ffc107;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(255, 193, 7);
+    border: 1px solid #dcc0f0;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.04), 0 0 8px rgb(206, 122, 210);
 }
 
 button {
     font-size: 2em;
-    background-color: #ffc107;
+    background-color: #dcc0f0;
     font-weight: bold;
     color: #ffffff;
     border-radius: 0.8em;
 }
 
 button:hover {
-    background-color: #d59917;
+    background-color: #dcc0f0;
     color: #ffffff;
 }
 
 button:disabled {
-    background-color: #fcd87c;
-    color: #ffffff;
+  background-color: #eba7ff;
+  color: #e500ff;
     font-size: 2em;
     border-radius: 0.8em;
-    border: 1px solid #ffffff;
+    border: 1px solid #e500ff;
 }
 
 .login_link {
@@ -92,6 +92,6 @@ button:disabled {
 }
 
 .login_link a {
-    color: #ffc107;
+    color: #ffffff;
     margin-left: 0.5em;
 }

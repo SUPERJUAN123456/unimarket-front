@@ -11,8 +11,8 @@
 }
 
 .card {
-    background-color: #2e2e2e;
-    color: #ffffff;    
+    background-color: #22003b;
+    color: #ffffff;
     min-height: 80%;
     overflow-y: scroll;
 
@@ -28,6 +28,6 @@ th {
 }
 
 .btn:hover {
-    background-color: #a89335;
+    background-color: #db96e3;
 
 }

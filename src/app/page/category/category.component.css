@@ -19,7 +19,7 @@
 
 .category_card_container{
  border-radius: 100%;
- background-color: #363636;
+ background-color: #22003b;
  color: #ffff;
  padding: 2em;
  min-width: 17em;
@@ -30,11 +30,11 @@
  flex-direction: column;
  justify-content:center;
  align-items: center;
- gap: 1em;  
+ gap: 1em;
 }
 .category_card_container img{
   min-width: 7em;
-  max-width: 7em; 
+  max-width: 7em;
   min-height: 7em;
   max-height: 7em;
   object-fit: cover;
@@ -43,8 +43,8 @@
    font-size: 2em;
  }
 
- .category_card_container:hover{  
-  background-color: #494949;
+ .category_card_container:hover{
+  background-color: #22003b;
   cursor: pointer;
-  
+
  }

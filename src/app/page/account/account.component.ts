@@ -17,23 +17,6 @@ export class AccountComponent {
   constructor(private tokenService: TokenService, private sessionService : SessionService) {
 
   }
- /* ngOnInit(): void {
-    const objeto = this;
-  }
-
-  private actualizarSesion(estado: boolean) {
-    this.isLogged = estado;
-    if (estado) {
-      this.idPerson = this.tokenService.getId();
-      this.name = this.tokenService.getName();
-      this.roles = this.tokenService.getRol();
-
-      if (this.roles[0] == "MODERADOR") {
-
-        this.isMod = true;
-      }
-    }
-  }*/
   ngOnInit(): void {
     this.isLogged = this.tokenService.isLogged();
     if (this.isLogged) {

@@ -17,7 +17,7 @@
 }
 
 .payment_method_card {
-    background-color: #363636;
+    background-color: #7a7676;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -42,7 +42,7 @@
 }
 
 .fa-solid:hover {
-    color: #e9bd43;
+    color: #dcc0f0;
     cursor: pointer;
 }
 
@@ -58,6 +58,6 @@
 }
 
 .new_payment_method:hover {
-    background-color: #e9bd43;
+    background-color: #d39ad7;
     cursor: pointer;
 }
