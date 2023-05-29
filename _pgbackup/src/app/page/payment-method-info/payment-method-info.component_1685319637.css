@@ -1,0 +1,82 @@
+
+.main_container {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.form_payment_method_container h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.form_payment_method_container {
+    min-height: 80%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;  
+    color: #fff;
+}
+
+.form_payment_method {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border-radius: 0.8em;   
+}
+
+.text-field {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    font-size: 2em;    
+}
+
+.text-field label {
+    width: 8em;
+    display: flex;
+    gap: 1em;
+}
+
+.text-field input {
+    width: 100%;
+    display: flex;
+    gap: 1.5em;
+    border-radius: 0.3em;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    outline: none;
+    padding-left: 0.5em;
+    color: #ffffff;
+}
+
+.text-field input:focus {
+    border: 1px solid #ffc107;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(255, 193, 7);
+}
+
+button {
+    font-size: 2em;
+    background-color: #ffc107;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 0.8em;
+}
+
+button:hover {
+    background-color: #d59917;
+    color: #ffffff;
+}
+
+button:disabled {
+    background-color: #fcd87c;
+    color: #ffffff;
+    font-size: 2em;
+    border-radius: 0.8em;
+    border: 1px solid #ffffff;
+}

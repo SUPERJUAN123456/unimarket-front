@@ -1,0 +1,63 @@
+.main_container {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.payment_method_container {
+  min-height: 80%;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;  
+  overflow-y: scroll;
+  color: #fff;
+}
+
+.payment_method_card {
+    background-color: #7a7676;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2em;
+    border-radius: 3em;
+}
+
+.info h3 {
+    font-size: 1.4em;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    gap: 4em;
+}
+
+.card_buttons {
+    display: flex;
+    gap: 2em;
+    font-size: 1.5em;
+}
+
+.fa-solid:hover {
+    color: #dcc0f0;
+    cursor: pointer;
+}
+
+.new_payment_method {
+    background-color: transparent;
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2em;
+    border-radius: 3em;
+    font-size: 1em;
+}
+
+.new_payment_method:hover {
+    background-color: #e9bd43;
+    cursor: pointer;
+}

@@ -1,0 +1,53 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.form-signin{
+ height: calc(100vh - 64px); 
+}
+h1{
+  color: #ffffff;
+}
+.form-control{
+  padding: 1em;
+  background-color: transparent;
+  color: #ffffff;
+}
+.form-control::placeholder{
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.form-control label{
+  color: #ffffff;
+}
+
+.form-control:focus {
+  border-color: #ffc107;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(255, 193, 7);
+}
+button{
+  background-color: #ffc107;
+  font-weight: bold;
+  color: #ffffff;
+}
+button:hover{
+  background-color: #d59917;
+  color: #ffffff;
+}
+
+button:disabled{
+  background-color: #fcd87c;
+  color: #ffffff;
+}
+.forget_password, .signup_container{
+  margin-top: 1em;
+  color: #ffffff;
+  font-size: 1.2em;
+}
+.forget_password a, .signup_container a{
+  color: #ffc107;
+  margin-left: 0.5em;
+}

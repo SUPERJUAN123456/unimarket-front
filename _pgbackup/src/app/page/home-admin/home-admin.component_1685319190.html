@@ -1,0 +1,17 @@
+<div class="home_container">
+
+    <div class="header_container">
+      <app-header></app-header>
+    </div>
+  
+    <div class="products_container" >
+      <div class = "item_product" *ngFor="let product of filtro">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+    </div>
+    <app-alert [alert] = "alert"></app-alert>
+    <div class="nav_container">
+      <app-nav-admin></app-nav-admin>
+    </div>
+    
+  </div>
